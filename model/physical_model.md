@@ -5,7 +5,6 @@
 |   Название    |    Описание   |  Тип данных   | Ограничение   |
 | ------------- | ------------- | ------------- | ------------- |
 | passenger_id  | Идентификатор | INTEGER       | PRIMARY KEY   |
-| ticket_id     | Идентификатор билета  | INTEGER | FOREIGN KEY |
 | last_name     | Фамилия пассажира  | VARCHAR(200) | NOT NULL  |
 | first_name     | Имя пассажира  | VARCHAR(200) | NOT NULL  |
 | middle_name     | Отчество пассажира  | VARCHAR(200) | NULL  |
