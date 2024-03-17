@@ -1,6 +1,6 @@
-INSERT INTO Passenger (passenger_id, last_name, first_name, middle_name, document, information, emil, phone_number) VALUES
+INSERT INTO Passenger (passenger_id, last_name, first_name, middle_name, document, information, email, phone_number) VALUES
 (98, 'Щепина', 'Екатерина', 'Андреевна', 'паспорт', 9222457389, 'vedma@mail.com', 89274783467);
-(1б 'Никитин', 'Алексей', 'Владимирович', 'паспорт', 3692581477, 'nikitin.aleksey@icloud.com', 89374673461);
+(16, 'Никитин', 'Алексей', 'Владимирович', 'паспорт', 3692581477, 'nikitin.aleksey@icloud.com', 89374673461);
 (99, 'Зотина', 'Вероника', 'Константиновна', 'заграничный паспорт', 723774859, 'ronni@yandex.ru', 89994783404);
 (2, 'Иванов', 'Дмитрий', 'Евгеньевич', 'паспорт', 84924573154, 'ivanov.dmitriy@example.com', 89134779870);
 (3, 'Смирнова ', 'Ольга', NULL, 'вид на жительство в РФ', 821345223, 'smi@mail.com', 8341669823);
