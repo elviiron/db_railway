@@ -4,9 +4,9 @@ CREATE TABLE Passenger (
       first_name VARCHAR(200) NOT NULL,
       middle_name VARCHAR(200),
       document VARCHAR(70) NOT NULL,
-      information INTEGER NOT NULL,
+      information VARCHAR(30) NOT NULL,
       email VARCHAR(200) NOT NULL UNIQUE,
-      phone_number INTEGER NOT NULL
+      phone_number VARCHAR(30) NOT NULL
 );
 
 
