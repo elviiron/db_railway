@@ -9,9 +9,9 @@
 | first_name     | Имя пассажира  | VARCHAR(200) | NOT NULL  |
 | middle_name     | Отчество пассажира  | VARCHAR(200) | NULL  |
 | document     | Документ пассажира  | VARCHAR(70) | NOT NULL  |
-| information     | Серия и номер документа  | INTEGER | NOT NULL  |
+| information     | Серия и номер документа  | VARCHAR(30) | NOT NULL  |
 | email     | Почта пассажира  | VARCHAR(200) | UNIQUE  |
-| phone number     | Номер телефона  | INTEGER | NOT NULL  |
+| phone number     | Номер телефона  | VARCHAR(30) | NOT NULL  |
 
 
 ### Таблица Билет ###
