@@ -18,8 +18,8 @@ CREATE TABLE Ticket (
       timetable_id INTEGER,
       van INTEGER NOT NULL,
       seat INTEGER NOT NULL,
-      from VARCHAR(100) NOT NULL,
-      where VARCHAR(100) NOT NULL,
+      city_start VARCHAR(100) NOT NULL,
+      city_finish VARCHAR(100) NOT NULL,
       FOREIGN KEY (passenger_id) REFERENCES Passenger (passenger_id),
       FOREIGN KEY (route_id) REFERENCES Route (route_id),
       FOREIGN KEY (sale_id) REFERENCES Sale (sale_id) ON DELETE SET NULL,
@@ -81,15 +81,14 @@ CREATE TABLE Station (
 CREATE TABLE Sale (
       sale_id INTEGER NOT NULL PRIMARY KEY,
       name VARCHAR(50) NOT NULL,
-      procent_sale INTEGER NOT NULL,
-      FOREIGN KEY (ticket_id) REFERENCES Ticket(ticket_id)
+      procent_sale INTEGER NOT NULL
 );
 
 
 CREATE TABLE History_Table (
       history_id INTEGER NOT NULL PRIMARY KEY,
       ticket_id INTEGER,
-      action VARCHAR(30) NOT NULL,
+      action_ticket VARCHAR(30) NOT NULL,
       date_start TIMESTAMP WITHOUT TIME ZONE NOT NULL,
       date_finish TIMESTAMP WITHOUT TIME ZONE NOT NULL,
       FOREIGN KEY (ticket_id) REFERENCES Ticket(ticket_id)
