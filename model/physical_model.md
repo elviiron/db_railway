@@ -22,10 +22,12 @@
 | passenger_id     | Идентификатор пассажира  | INTEGER | FOREIGN KEY |
 | route_id     | Идентификатор маршрута  | INTEGER | FOREIGN KEY |
 | sale_id     | Идентификатор скидки  | INTEGER | FOREIGN KEY |
-| history_id     | Идентификатор истории билета  | INTEGER | FOREIGN KEY |
 | timetable_id     | Идентификатор расписания  | INTEGER | FOREIGN KEY |
 | van     | Номер вагона  | INTEGER | NOT NULL |
 | seat     | Номер места | INTEGER | NOT NULL |
+| from     | Откуда | VARCHAR(100) | NOT NULL |
+| where     | Куда | VARCHAR(100) | NOT NULL |
+
 
 
 ### Таблица Платеж ###
@@ -35,8 +37,8 @@
 | payment_id  | Идентификатор | INTEGER       | PRIMARY KEY   |
 | passenger_id     | Идентификатор пассажира  | INTEGER | FOREIGN KEY |
 | ticket_id     | Идентификатор билета  | INTEGER | FOREIGN KEY |
-| status     | Статус платежа  | VARCHAR(30) | NOT NULL |
 | amount     | Стоимость билета  | NUMERIC| NOT NULL |
+| amount_sale    | Стоимость билета со скидкой(или без) | NUMERIC| NULL |
 | date     | Дата платежа  | TIMESTAMP | NOT NULL |
 
 
@@ -55,6 +57,7 @@
 | ------------- | ------------- | ------------- | ------------- |
 | route_id  | Идентификатор | INTEGER       | PRIMARY KEY   |
 | timetable_id     | Идентификатор расписания  | INTEGER | FOREIGN KEY |
+| train_name     | Номер поезда  | VARCHAR(20) | FOREIGN KEY |
 | departure_name     | Место отправления | VARCHAR(100) | NOT NULL |
 | arrival_name     | Место прибытия | VARCHAR(100) | NOT NULL |
 
@@ -63,19 +66,16 @@
 
 |   Название    |    Описание   |  Тип данных   | Ограничение   |
 | ------------- | ------------- | ------------- | ------------- |
-| train_id  | Идентификатор | INTEGER       | PRIMARY KEY   |
-| route_id     | Идентификатор маршрута  | INTEGER | FOREIGN KEY |
+| train_name  | Номер поезда |  VARCHAR(20)       | PRIMARY KEY   |
 | type     | Тип поезда | VARCHAR(50) | NOT NULL |
-| name     | Название поезда | VARCHAR(20) | NOT NULL |
 
 
 ### Таблица Маршрут станции ###
 
 |   Название    |    Описание   |  Тип данных   | Ограничение   |
 | ------------- | ------------- | ------------- | ------------- |
-| station_route_id  | Идентификатор | INTEGER       | PRIMARY KEY   |
-| route_id     | Идентификатор маршрута  | INTEGER | FOREIGN KEY |
-| station_id     | Последовательность станций | INTEGER | FOREIGN KEY |
+| station_id     | Последовательность станций | INTEGER | PRIMARY KEY FOREIGN KEY |
+| route_id     | Идентификатор маршрута  | INTEGER | PRIMARY KEY FOREIGN KEY |
 
 
 
@@ -92,7 +92,6 @@
 |   Название    |    Описание   |  Тип данных   | Ограничение   |
 | ------------- | ------------- | ------------- | ------------- |
 | sale_id  | Идентификатор | INTEGER       | PRIMARY KEY   |
-| ticket_id     | Идентификатор билета  | INTEGER | FOREIGN KEY |
 | name     | Название скидки | VARCHAR(50) | NOT NULL |
 | procent_sale     | Процент скидки | INTEGER | NOT NULL |
 
