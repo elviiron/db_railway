@@ -25,8 +25,8 @@
 | timetable_id     | Идентификатор расписания  | INTEGER | FOREIGN KEY |
 | van     | Номер вагона  | INTEGER | NOT NULL |
 | seat     | Номер места | INTEGER | NOT NULL |
-| from     | Откуда | VARCHAR(100) | NOT NULL |
-| where     | Куда | VARCHAR(100) | NOT NULL |
+| city_start     | Откуда | VARCHAR(100) | NOT NULL |
+| city_finish    | Куда | VARCHAR(100) | NOT NULL |
 
 
 
