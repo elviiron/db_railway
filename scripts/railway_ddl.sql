@@ -31,6 +31,7 @@ CREATE TABLE Payment (
       payment_id INTEGER NOT NULL PRIMARY KEY,
       passenger_id INTEGER,
       ticket_id INTEGER,
+      status VARCHAR(20) NOT NULL,
       amount NUMERIC NOT NULL,
       amount_sale NUMERIC NOT NULL,
       date TIMESTAMP WITHOUT TIME ZONE NOT NULL,
