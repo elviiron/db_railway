@@ -37,6 +37,7 @@
 | payment_id  | Идентификатор | INTEGER       | PRIMARY KEY   |
 | passenger_id     | Идентификатор пассажира  | INTEGER | FOREIGN KEY |
 | ticket_id     | Идентификатор билета  | INTEGER | FOREIGN KEY |
+| status     | Статус платежа  | VARCHAR(20)| NOT NULL |
 | amount     | Стоимость билета  | NUMERIC| NOT NULL |
 | amount_sale    | Стоимость билета со скидкой(или без) | NUMERIC| NULL |
 | date     | Дата платежа  | TIMESTAMP | NOT NULL |
