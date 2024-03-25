@@ -363,4 +363,27 @@ SELECT last_name, first_name
 FROM Passenger
 WHERE middle_name is null;
 
-/*
+/*Получаем пассажиров, которые не оплатили билет*/
+
+SELECT p.first_name, p.last_name, p.middle_name
+FROM Passenger p
+JOIN Ticket t ON p.passenger_id = t.passenger_id
+JOIN History_Table ht ON t.ticket_id = ht.ticket_id
+WHERE ht.action_ticket = 'забронирован' 
+AND NOT EXISTS (SELECT ht2.action_ticket FROM History_Table ht2 WHERE ht2.ticket_id = ht.ticket_id AND ht2.action_ticket = 'оплачен');
+
+/*Получаем название станции, через которую чаще всего проходят поезда*/
+
+SELECT s.name, COUNT(sr.station_id) AS route_count
+FROM Station_Route sr
+JOIN Station s ON sr.station_id = s.station_id
+GROUP BY s.name, sr.station_id
+ORDER BY route_count DESC, s.name ASC
+LIMIT 1;
+
+/*Самый дорогой билет*/
+
+SELECT * FROM Payment
+WHERE amount = (SELECT MAX(amount) FROM Payment);
+
+
